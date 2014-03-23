@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<script type="text/javascript" src="http://cdnjs.cloudflare.com/ajax/libs/highlight.js/8.0/highlight.min.js"></script>
+		<script type="text/javascript" src="cypher.js"></script>
+		<link href="http://cdnjs.cloudflare.com/ajax/libs/highlight.js/8.0/styles/default.min.css" rel="stylesheet" />
+
+		<script type="text/javascript">
+			hljs.registerLanguage("cypher", cypher);
+			hljs.initHighlightingOnLoad();
+		</script> 	
+		<style>
+		</style>
+    </head>
+	<body>
+		<h2>Basic Statement</h2>
+		<pre><code class="cypher">
+			MATCH (n:Label) - [:REL] -> () RETURN n;
+		</code></pre>
+
+		<h2>Multiple Labels</h2>
+		<pre><code class="cypher">
+			MATCH (n:Label1:Label2) - [:REL] -> () RETURN n;
+		</code></pre>
+
+		<h2>CREATE</h2>
+		<pre><code class="cypher">
+			CREATE (n:Label {prop1: 'value', prop2: 123});
+		</code></pre>
+
+		<h2>MERGE</h2>
+		<pre><code class="cypher">
+			MERGE (n:Label {prop1: 'value', prop2: 123}) - [:REL {}] -> (n:Label {prop1: 'value2'});
+		</code></pre>
+
+		<h2>WITH</h2>
+		<pre><code class="cypher">
+			MATCH (n:SomeLabel) - [] -> (q)
+			WITH q
+			MATCH (q) - [] -> (r)
+			RETURN r;			
+		</code></pre>
+
+		<h2>COMMENT</h2>
+		<pre><code class="cypher">
+			// TEST THE COMMENT
+			MATCH (n:Label) RETURN n;
+		</code></pre>
+
+		<h2>LITERALS</h2>
+		<pre><code class="cypher">
+			MATCH (n:Label) WHERE n.is_a_node = true RETURN n;
+		</code></pre>
+
+		<h2>PREDICATES</h2>
+		<pre><code class="cypher">
+			MATCH (n:Label) WHERE n.is_a_node = true RETURN n;
+			MATCH (n:Label) WHERE n.prop = "foo" RETURN n;
+			MATCH (n:Label) WHERE n.prop = 'foo' RETURN n;
+		</code></pre>
+	</body>
+</html>
