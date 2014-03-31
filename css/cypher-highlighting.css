@@ -1,15 +1,11 @@
 .cypher .hljs-keyword {
-	color: darkblue;
+	color: #1d75b3;
 }
 
 .cypher .hljs-label {
 	font-weight: bold;
 }
 
-.cypher .hljs-labelName {
-	font-weight: bold;
-	color: red;
-}
 
 .cypher .hljs-comment {
 	color: gray;
@@ -18,4 +14,12 @@
 .cypher .hljs-properties {
 	font-style: italic;
 	color: black;
+}
+
+.cypher .hljs-node {
+	color: #75438a;
+}
+
+.cypher .hljs-relationship {
+	color: #047d65;
 }

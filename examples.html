@@ -2,8 +2,9 @@
 <html>
 	<head>
 		<script type="text/javascript" src="http://cdnjs.cloudflare.com/ajax/libs/highlight.js/8.0/highlight.min.js"></script>
-		<script type="text/javascript" src="cypher-highlighting.js"></script>
+		<script type="text/javascript" src="javascripts/cypher.js"></script>
 		<link href="http://cdnjs.cloudflare.com/ajax/libs/highlight.js/8.0/styles/default.min.css" rel="stylesheet" />
+		<link href="css/cypher-highlighting.css" rel="stylesheet"/>
 
 		<script type="text/javascript">
 			hljs.registerLanguage("cypher", cypher);
@@ -57,6 +58,11 @@
 			MATCH (n:Label) WHERE n.is_a_node = true RETURN n;
 			MATCH (n:Label) WHERE n.prop = "foo" RETURN n;
 			MATCH (n:Label) WHERE n.prop = 'foo' RETURN n;
+		</code></pre>
+
+		<h2>Functions</h2>
+		<pre><code class="cypher">
+			MATCH (n:Label) RETURN abs(n.neg_num);
 		</code></pre>
 	</body>
 </html>
